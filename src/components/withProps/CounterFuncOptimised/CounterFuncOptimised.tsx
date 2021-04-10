@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import { unstable_trace as trace } from "scheduler/tracing";
 
 type ButtonProps = {
   children?: React.ReactNode;
@@ -13,11 +14,15 @@ function CounterFuncOptimised() {
   const [count, setCount] = useState(0);
 
   const dec = useCallback(() => {
-    setCount((prevCount) => prevCount - 1);
+    trace("dec", performance.now(), () => {
+      setCount((prevCount) => prevCount - 1);
+    });
   }, []);
 
   const inc = useCallback(() => {
-    setCount((prevCount) => prevCount + 1);
+    trace("inc", performance.now(), () => {
+      setCount((prevCount) => prevCount + 1);
+    });
   }, []);
 
   return (
