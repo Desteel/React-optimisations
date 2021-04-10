@@ -1,27 +1,34 @@
 import React from "react";
-import PassObjectProps from "components/withProps/PassObjectProps";
-import TimerClass from "components/withoutProps/TimerClass";
-import TimerFunctional from "components/withoutProps/TimerFunctional";
-import CounterClass from "components/withProps/CounterClass";
+// import PassObjectProps from "components/withProps/PassObjectProps";
+// import TimerClass from "components/withoutProps/TimerClass";
+// import TimerFunctional from "components/withoutProps/TimerFunctional";
+// import CounterClassBind from "components/withProps/CounterClassBind";
+// import CounterClass from "components/withProps/CounterClass";
 import CounterFunc from "components/withProps/CounterFunc";
-import PassMemoObjectProps from "components/withProps/PassMemoObjectProps";
+import CounterFuncOptimised from "components/withProps/CounterFuncOptimised";
+// import PassMemoObjectProps from "components/withProps/PassMemoObjectProps";
 
 function App() {
   return (
     <>
-      <TimerClass />
+      {/* <TimerClass />
       <br />
       <TimerFunctional />
-      <br />
+      <br /> */}
+      <CounterFuncOptimised />
       <CounterFunc />
-      <br />
+      {/* <br /> */}
+
+      {/* <br />
       <CounterClass />
+      <br />
+      <CounterClassBind />
       <br />
       <PassObjectProps />
       <br />
-      <PassMemoObjectProps />
+      <PassMemoObjectProps /> */}
     </>
   );
 }
 
-export default App;
+export default React.memo(App);
