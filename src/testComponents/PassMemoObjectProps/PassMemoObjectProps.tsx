@@ -44,6 +44,7 @@ function PassMemoObjectProps() {
   //   [state]
   // );
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const memoizedState = useMemo(() => state, [state.a, state.b]);
 
   return (
